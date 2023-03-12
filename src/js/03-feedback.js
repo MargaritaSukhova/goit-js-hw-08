@@ -8,8 +8,10 @@ formEl.addEventListener('input', throttle(handleFormInput, 500));
 formEl.addEventListener('submit', handleFormSubmit);
 
 function handleFormInput(event) {
-  formData[event.target.name] = event.target.value;
-  // console.log(formData);
+  // formData[event.target.name] = event.target.value;
+  formData.email = formEl.elements.email.value;
+  formData.message = formEl.elements.message.value;
+  console.log(formData);
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formData));
 }
 // console.log(localStorage.getItem(LOCALSTORAGE_KEY));
