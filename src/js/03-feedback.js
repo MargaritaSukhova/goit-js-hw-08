@@ -26,6 +26,14 @@ if (localStorage.getItem(LOCALSTORAGE_KEY) !== null) {
 }
 
 function handleFormSubmit(event) {
+  if (
+    formEl.elements.email.value === '' ||
+    formEl.elements.message.value === ''
+  ) {
+    alert('Please fill in all the fields!');
+    return;
+  }
+
   event.preventDefault();
   event.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
